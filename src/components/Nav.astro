@@ -4,40 +4,189 @@ interface Props {
 }
 const { active } = Astro.props;
 ---
-<nav class="r-nav" style="position: sticky; top: 0; z-index: 50; height: 66px; background: var(--nav-bg, rgba(243,245,244,0.82)); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, #e3e8e6);">
-  <div style="max-width: 1000px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between;">
-    <a href="/" style="background: none; border: none; cursor: pointer; padding: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink, #141821); text-decoration: none;">
-      jeff<span style="color:#1f9d63;">.</span>clarenz
-    </a>
-    <div style="display: flex; align-items: center; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px;">
-      <a class="r-nav-link" href="/work" style={`position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;`}>
-        work{active === 'work' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
-      </a>
-      <a class="r-nav-link" href="/about" style="position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;">
-        about{active === 'about' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
-      </a>
-      <a class="r-nav-link" href="/writing" style="position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;">
-        writing{active === 'writing' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
-      </a>
-      <button id="theme-toggle" title="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 8px 10px; font-size: 16px; line-height: 1; color: var(--mid, #45504b);">☾</button>
-      <a href="/contact" style="margin-left: 4px; background: #141821; border: none; cursor: pointer; padding: 9px 16px; border-radius: 3px; color: #f3f5f4; font-family: inherit; font-size: inherit; text-decoration: none;">contact</a>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">jeff<span>.</span>clarenz</a>
+
+    <div class="nav-desktop">
+      <a href="/work"    class={`nav-link${active === 'work'    ? ' nav-link--active' : ''}`}>work</a>
+      <a href="/about"   class={`nav-link${active === 'about'   ? ' nav-link--active' : ''}`}>about</a>
+      <a href="/writing" class={`nav-link${active === 'writing' ? ' nav-link--active' : ''}`}>writing</a>
+      <button id="theme-toggle" class="nav-theme" title="Toggle theme">☾</button>
+      <a href="/contact" class="nav-contact">contact</a>
     </div>
+
+    <div class="nav-mobile-right">
+      <button id="theme-toggle-mobile" class="nav-theme" title="Toggle theme">☾</button>
+      <button id="nav-burger" class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="nav-mobile-menu" class="nav-mobile-menu">
+    <a href="/work"    class={active === 'work'    ? 'active' : ''}>work</a>
+    <a href="/about"   class={active === 'about'   ? 'active' : ''}>about</a>
+    <a href="/writing" class={active === 'writing' ? 'active' : ''}>writing</a>
+    <a href="/contact" class={active === 'contact' ? 'active' : ''}>contact</a>
   </div>
 </nav>
 
+<style>
+  #site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--nav-bg, rgba(243,245,244,0.82));
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border, #e3e8e6);
+  }
+  .nav-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink, #141821);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-logo span { color: #1f9d63; }
+
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .nav-link {
+    position: relative;
+    padding: 8px 14px;
+    color: var(--mid, #45504b);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  .nav-link--active::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 2px;
+    height: 2px;
+    background: #1f9d63;
+  }
+  .nav-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--mid, #45504b);
+  }
+  .nav-contact {
+    margin-left: 4px;
+    background: #141821;
+    padding: 9px 16px;
+    border-radius: 3px;
+    color: #f3f5f4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  /* Mobile burger */
+  .nav-mobile-right {
+    display: none;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink, #141821);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid var(--border, #e3e8e6);
+    padding: 8px 0 12px;
+    background: var(--nav-bg, rgba(243,245,244,0.97));
+    backdrop-filter: blur(12px);
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a {
+    padding: 13px 24px;
+    color: var(--mid, #45504b);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border, #e3e8e6);
+  }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a.active { color: #1f9d63; }
+
+  @media (max-width: 640px) {
+    .nav-inner     { padding: 0 20px; height: 56px; }
+    .nav-desktop   { display: none; }
+    .nav-mobile-right { display: flex; }
+  }
+</style>
+
 <script is:inline>
   (function () {
-    const btn = document.getElementById('theme-toggle');
-    function apply(t) {
+    function applyTheme(t) {
       document.documentElement.dataset.theme = t;
       localStorage.setItem('jc-theme', t);
-      if (btn) btn.textContent = t === 'dark' ? '☀' : '☾';
+      const icon = t === 'dark' ? '☀' : '☾';
+      ['theme-toggle', 'theme-toggle-mobile'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = icon;
+      });
     }
-    // Sync icon with current theme on load
-    const cur = document.documentElement.dataset.theme || 'light';
-    if (btn) btn.textContent = cur === 'dark' ? '☀' : '☾';
-    if (btn) btn.addEventListener('click', () => {
-      apply(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    applyTheme(document.documentElement.dataset.theme || 'light');
+
+    ['theme-toggle', 'theme-toggle-mobile'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('click', function() {
+        applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+      });
     });
+
+    var burger = document.getElementById('nav-burger');
+    var menu   = document.getElementById('nav-mobile-menu');
+    if (burger && menu) {
+      burger.addEventListener('click', function() {
+        burger.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+    }
   })();
 </script>
