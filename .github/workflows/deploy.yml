@@ -23,8 +23,14 @@ jobs:
 
       - run: npm run build
 
+      - name: Create Pages project (if not exists)
+        run: npx wrangler pages project create jeffclarenz-dot-com --production-branch=main || true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 3f1ab4a6237696f7233dbc9b88a64b39
+
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 3f1ab4a6237696f7233dbc9b88a64b39
-          command: pages deploy dist --project-name=jeffclarenz-dot-com --branch=main
+          command: pages deploy dist --project-name=jeffclarenz-dot-com --branch=main --commit-dirty=true
