@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f3f5f4; font-family: 'Instrument Sans', sans-serif; color: #141821; -webkit-font-smoothing: antialiased; }
+</style>
+</helmet>
+
+<div style="max-width: 980px; margin: 0 auto; padding: 72px 48px 96px;">
+
+  <!-- header -->
+  <div style="display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid #d8ddda; padding-bottom:24px; margin-bottom:56px;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a938e; margin-bottom:10px;">Brand guide · v1</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:600; letter-spacing:-0.025em; margin:0;">jeff<span style="color:#1f9d63;">.</span>clarenz — identity</h1>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#9aa39e; text-align:right; line-height:1.7;">Signal system<br>graphite · green</div>
+  </div>
+
+  <!-- WORDMARK -->
+  <section style="margin-bottom:60px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1f9d63; margin-bottom:20px;">01 — Wordmark <span style="color:#9aa39e;">(header)</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div style="background:#fff; border:1px solid #e3e8e6; border-radius:6px; height:120px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:32px; letter-spacing:-0.02em; color:#141821;">jeff<span style="color:#1f9d63;">.</span>clarenz</span>
+      </div>
+      <div style="background:#141821; border:1px solid #141821; border-radius:6px; height:120px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:32px; letter-spacing:-0.02em; color:#eef1ef;">jeff<span style="color:#2bb377;">.</span>clarenz</span>
+      </div>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#7a827d; margin:14px 0 0; line-height:1.7;">Space Grotesk 600 · lowercase · letter-spacing −0.02em · green full-stop between names. On dark, the dot brightens to #2BB377.</p>
+  </section>
+
+  <!-- AVATAR -->
+  <section style="margin-bottom:60px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1f9d63; margin-bottom:20px;">02 — Avatar <span style="color:#9aa39e;">(profiles · square + circle)</span></div>
+    <div style="background:#fff; border:1px solid #e3e8e6; border-radius:6px; padding:34px; display:flex; gap:28px; align-items:center; flex-wrap:wrap;">
+      <div style="width:96px; height:96px; border-radius:22px; background:#141821; display:flex; flex-direction:column; justify-content:center; padding-left:18px; overflow:hidden;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; line-height:1.12; letter-spacing:-0.03em; color:#eef1ef; white-space:nowrap;">jeff<span style="color:#2bb377;">.</span></span><span style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:19px; line-height:1.12; letter-spacing:-0.03em; color:#9aa39e; white-space:nowrap;">clarenz</span></div>
+      <div style="width:96px; height:96px; border-radius:50%; background:#141821; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding-left:24px; overflow:hidden;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; line-height:1.12; letter-spacing:-0.03em; color:#eef1ef; white-space:nowrap;">jeff<span style="color:#2bb377;">.</span></span><span style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:18px; line-height:1.12; letter-spacing:-0.03em; color:#9aa39e; white-space:nowrap;">clarenz</span></div>
+      <div style="width:96px; height:96px; border-radius:22px; background:#eef1ef; display:flex; flex-direction:column; justify-content:center; padding-left:18px; overflow:hidden;"><span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; line-height:1.12; letter-spacing:-0.03em; color:#141821; white-space:nowrap;">jeff<span style="color:#1f9d63;">.</span></span><span style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:19px; line-height:1.12; letter-spacing:-0.03em; color:#5a635e; white-space:nowrap;">clarenz</span></div>
+      <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#7a827d; margin:0; line-height:1.7; flex:1; min-width:180px;">Two-line lockup, left-aligned. Bold "jeff." + green dot, regular muted "clarenz". App Store dev page, X, GitHub, LinkedIn.</p>
+    </div>
+  </section>
+
+  <!-- FAVICON -->
+  <section style="margin-bottom:60px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1f9d63; margin-bottom:20px;">03 — Favicon <span style="color:#9aa39e;">(browser tab · 16–32px)</span></div>
+    <div style="background:#fff; border:1px solid #e3e8e6; border-radius:6px; padding:34px; display:flex; gap:26px; align-items:center;">
+      <div style="width:64px; height:64px; border-radius:14px; background:#141821; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:32px; letter-spacing:-0.04em; color:#eef1ef;">j<span style="color:#2bb377;">.</span>c</div>
+      <div style="width:32px; height:32px; border-radius:8px; background:#141821; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:-0.04em; color:#eef1ef;">j<span style="color:#2bb377;">.</span>c</div>
+      <div style="width:16px; height:16px; border-radius:4px; background:#141821; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:8px; letter-spacing:-0.04em; color:#eef1ef;">j<span style="color:#2bb377;">.</span>c</div>
+      <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#7a827d; margin:0; line-height:1.7; flex:1;">j.c on graphite tile with green dot. Live in the site tab now. Reads down to 16px.</p>
+    </div>
+  </section>
+
+  <!-- COLOR -->
+  <section style="margin-bottom:60px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1f9d63; margin-bottom:20px;">04 — Palette</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px;">
+      <div><div style="height:76px; border-radius:5px; background:#141821; border:1px solid #d8ddda;"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:8px; color:#3a423d;">Ink</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e;">#141821</div></div>
+      <div><div style="height:76px; border-radius:5px; background:#1f9d63;"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:8px; color:#3a423d;">Signal</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e;">#1F9D63</div></div>
+      <div><div style="height:76px; border-radius:5px; background:#2bb377;"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:8px; color:#3a423d;">Signal / dark</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e;">#2BB377</div></div>
+      <div><div style="height:76px; border-radius:5px; background:#f3f5f4; border:1px solid #d8ddda;"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:8px; color:#3a423d;">Paper</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e;">#F3F5F4</div></div>
+      <div><div style="height:76px; border-radius:5px; background:#5a635e;"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:8px; color:#3a423d;">Slate</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e;">#5A635E</div></div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1f9d63; margin-bottom:20px;">05 — Type</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div style="background:#fff; border:1px solid #e3e8e6; border-radius:6px; padding:26px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e; letter-spacing:0.06em;">DISPLAY / HEADINGS</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:34px; letter-spacing:-0.025em; margin-top:10px;">Space Grotesk</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#5a635e; margin-top:6px;">400 · 500 · 600 · 700</div>
+      </div>
+      <div style="background:#fff; border:1px solid #e3e8e6; border-radius:6px; padding:26px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9aa39e; letter-spacing:0.06em;">LABELS / META / CODE</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-weight:600; font-size:30px; margin-top:10px;">JetBrains Mono</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#5a635e; margin-top:8px;">uppercase · tracked · 400–600</div>
+      </div>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#7a827d; margin:14px 0 0; line-height:1.7;">Body copy: Instrument Sans. Green (#1F9D63) is an accent only — dot, single highlighted rule, one CTA. Never fill large areas with it.</p>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout>
+  <Nav />
+  <main>
+    <!-- HERO -->
+    <section class="r-hero" style="position: relative; background: #141821; color: #eef1ef; padding: 128px 40px 0; overflow: hidden;">
+      <canvas id="hero-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
+      <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #141821 0%, rgba(20,24,33,0.86) 30%, rgba(20,24,33,0.4) 62%, rgba(20,24,33,0) 100%);"></div>
+      <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, #141821 0%, rgba(20,24,33,0) 26%);"></div>
+      <div style="position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; display: flex; gap: 30px;">
+        <div class="r-rule" style="width: 3px; flex: none; background: #1f9d63; align-self: stretch; transform-origin: top; animation: jcRule 0.7s cubic-bezier(0.2,0.7,0.2,1) 0.05s both;"></div>
+        <div style="flex: 1; min-width: 0;">
+          <h1 class="r-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 68px; font-weight: 600; line-height: 1.02; letter-spacing: -0.03em; margin: 0; max-width: 900px; animation: jcFadeX 0.6s 0.18s ease both;">Building platforms that bridge the gaps,<br>fighting the scroll with smarter apps.</h1>
+          <p class="r-sub" style="font-size: 18px; line-height: 1.6; color: #a8b0ac; max-width: 620px; margin: 28px 0 0; animation: jcFadeX 0.6s 0.3s ease both;">Architecture, infrastructure, and the apps themselves — designed and built hands-on. Founder &amp; CTO at burket.ph and onephp.technology.</p>
+          <div class="r-btns" style="display: flex; gap: 12px; margin-top: 40px; animation: jcFadeX 0.6s 0.42s ease both;">
+            <a href="/work" style="cursor: pointer; background: #1f9d63; border: none; color: #08130d; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 13px 22px; border-radius: 3px; text-decoration: none;">view the work →</a>
+            <a href="/contact" style="cursor: pointer; background: transparent; border: 1px solid #3a4048; color: #eef1ef; font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 13px 22px; border-radius: 3px; text-decoration: none;">get in touch</a>
+          </div>
+        </div>
+      </div>
+      <div class="r-stats" style="position: relative; z-index: 1; max-width: 1000px; margin: 84px auto 0; border-top: 1px solid #262c34; display: grid; grid-template-columns: repeat(3, 1fr);">
+        <div style="padding: 22px 32px 30px 0;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Role</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Engineer · Founder · CTO</div>
+        </div>
+        <div class="r-stat-mid" style="padding: 22px 32px 30px; border-left: 1px solid #262c34;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Based</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Philippines · building for everywhere</div>
+        </div>
+        <div class="r-stat-right" style="padding: 22px 0 30px 32px; border-left: 1px solid #262c34;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Shipping</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">2 consumer apps + platform work</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="r-px r-pt" style="max-width: 1000px; margin: 0 auto; padding: 96px 40px 20px;">
+      <div class="r-3col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+        <div>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">Architecture</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">System design that survives contact with production — clear boundaries, sensible tradeoffs, room to grow.</p>
+        </div>
+        <div>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">DevOps &amp; Infra</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Pipelines, environments, and reliability that stay boring — so the interesting work can keep moving.</p>
+        </div>
+        <div>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">AI-assisted delivery</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Engineering amplified by AI — shipping more, faster, without losing the plot on quality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPS -->
+    <section class="r-px r-pt" style="max-width: 1000px; margin: 0 auto; padding: 72px 40px 20px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px;">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin: 0;">Apps I've shipped</h2>
+        <a href="/work" style="background: none; border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted, #5a635e); text-decoration: none;">all work →</a>
+      </div>
+      <div class="r-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="background: var(--surface, #fff); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; overflow: hidden;">
+          <div style="height: 176px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border, #e3e8e6);"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">trivia game — app store shot</span></div>
+          <div style="padding: 20px 22px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 01 <span style="color:#9aa39e;">· iOS · live</span></div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 10px 0 6px;">Trivia game</h3>
+            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">A fast, replayable trivia experience — shipped to the App Store.</p>
+          </div>
+        </div>
+        <div style="background: var(--surface, #fff); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; overflow: hidden;">
+          <div style="height: 176px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border, #e3e8e6);"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">anti brain-rot — feed shot</span></div>
+          <div style="padding: 20px 22px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 02 <span style="color:#9aa39e;">· iOS · in progress</span></div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 10px 0 6px;">Anti brain-rot</h3>
+            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">TikTok's format, pointed at trivia — a feed that makes you a little smarter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="r-px" style="max-width: 1000px; margin: 88px auto 0; padding: 0 40px;">
+      <div class="r-cta" style="background: #141821; border-radius: 4px; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+        <div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600; color: #eef1ef; margin: 0; letter-spacing: -0.02em;">Building something? Found one of my apps?</h2>
+          <p style="font-size: 15px; color: #a8b0ac; margin: 12px 0 0;">Always happy to talk software, infra, or trivia.</p>
+        </div>
+        <a href="/contact" style="cursor: pointer; background: #1f9d63; border: none; color: #08130d; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 14px 26px; border-radius: 3px; white-space: nowrap; text-decoration: none;">say hello →</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+  if (canvas) {
+    const ctx = canvas.getContext('2d')!;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const G = '31,157,99', GB = '43,179,119';
+    const LINK = 380;
+    let W = 0, H = 0, raf: number;
+
+    const resize = () => {
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      if (!W || !H) return;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+
+    const TILE = 256, ZOOM = 17;
+    const BASE_TX = 109587, BASE_TY = 60145;
+    const tileCache = new Map<string, HTMLImageElement>();
+    let panX = 0, panY = 0;
+
+    const getTile = (tx: number, ty: number) => {
+      const key = `${tx}_${ty}`;
+      if (tileCache.has(key)) return tileCache.get(key)!;
+      const img = new Image();
+      img.src = `https://${'abcd'[(tx + ty) % 4]}.basemaps.cartocdn.com/light_nolabels/${ZOOM}/${tx}/${ty}.png`;
+      tileCache.set(key, img);
+      return img;
+    };
+
+    const drawMap = () => {
+      panX += 0.06; panY += 0.035;
+      const ox = panX % TILE, oy = panY % TILE;
+      const t0x = Math.floor(panX / TILE), t0y = Math.floor(panY / TILE);
+      ctx.globalAlpha = 0.35;
+      ctx.filter = 'invert(1) saturate(0) brightness(3)';
+      for (let dx = 0; dx <= Math.ceil(W / TILE) + 1; dx++)
+        for (let dy = 0; dy <= Math.ceil(H / TILE) + 1; dy++) {
+          const img = getTile(BASE_TX + t0x + dx, BASE_TY + t0y + dy);
+          if (img.complete && img.naturalWidth) ctx.drawImage(img, dx * TILE - ox, dy * TILE - oy, TILE, TILE);
+        }
+      ctx.filter = 'none';
+      ctx.globalAlpha = 1;
+    };
+
+    const CELL = 380;
+    const hash = (cx: number, cy: number) => {
+      let h = ((cx * 2654435761) ^ (cy * 2246822519)) >>> 0;
+      h ^= h >>> 16; h = Math.imul(h, 2246822519); h ^= h >>> 13;
+      h = Math.imul(h, 3266489917); h ^= h >>> 16;
+      return h >>> 0;
+    };
+    const lcg = (s: number) => { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return { s, v: s / 0x100000000 }; };
+
+    const cellPortals = (cx: number, cy: number) => {
+      let s = hash(cx, cy);
+      const out: Array<{ mx: number; my: number; rad: number; ph: number; big: boolean }> = [];
+      const n = 3 + (s % 2); s = lcg(s).s;
+      for (let i = 0; i < n; i++) {
+        let r;
+        r = lcg(s); s = r.s; const mx = cx * CELL + r.v * CELL;
+        r = lcg(s); s = r.s; const my = cy * CELL + r.v * CELL;
+        r = lcg(s); s = r.s; const rad = 1.2 + r.v * 2;
+        r = lcg(s); s = r.s; const ph = r.v * Math.PI * 2;
+        r = lcg(s); s = r.s; const big = r.v < 0.28;
+        out.push({ mx, my, rad, ph, big });
+      }
+      return out;
+    };
+
+    const getPortals = () => {
+      const buf = LINK;
+      const cx0 = Math.floor((panX - buf) / CELL), cy0 = Math.floor((panY - buf) / CELL);
+      const cx1 = Math.floor((panX + W + buf) / CELL), cy1 = Math.floor((panY + H + buf) / CELL);
+      const all: Array<{ mx: number; my: number; rad: number; ph: number; big: boolean; x: number; y: number }> = [];
+      for (let cx = cx0; cx <= cx1; cx++)
+        for (let cy = cy0; cy <= cy1; cy++)
+          for (const p of cellPortals(cx, cy))
+            all.push({ ...p, x: p.mx - panX, y: p.my - panY });
+      return all;
+    };
+
+    const draw = (t: number) => {
+      ctx.clearRect(0, 0, W, H);
+      drawMap();
+      const portals = getPortals();
+      const TF = LINK * 0.66;
+      for (let i = 0; i < portals.length; i++) for (let j = i + 1; j < portals.length; j++) for (let k = j + 1; k < portals.length; k++) {
+        const a = portals[i], b = portals[j], c = portals[k];
+        if (Math.hypot(a.x - b.x, a.y - b.y) < TF && Math.hypot(b.x - c.x, b.y - c.y) < TF && Math.hypot(c.x - a.x, c.y - a.y) < TF) {
+          ctx.fillStyle = `rgba(${G},0.045)`;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.lineTo(c.x, c.y); ctx.closePath(); ctx.fill();
+        }
+      }
+      for (let i = 0; i < portals.length; i++) for (let j = i + 1; j < portals.length; j++) {
+        const a = portals[i], b = portals[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < LINK) {
+          ctx.strokeStyle = `rgba(${G},${(1 - d / LINK) * 0.3})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      for (const p of portals) {
+        const pulse = 0.5 + 0.5 * Math.sin(t * 0.0012 + p.ph);
+        if (p.big) {
+          ctx.strokeStyle = `rgba(${GB},${0.12 + 0.2 * pulse})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.rad + 4 + pulse * 3, 0, Math.PI * 2); ctx.stroke();
+        }
+        ctx.fillStyle = `rgba(${GB},${0.45 + 0.42 * pulse})`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.rad, 0, Math.PI * 2); ctx.fill();
+      }
+      raf = requestAnimationFrame(draw);
+    };
+    raf = requestAnimationFrame(draw);
+  }
+</script>

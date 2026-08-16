@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getPosts } from '../../lib/sanity';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+<Layout title={`${post.title} — Jeff Clarenz`} description={post.excerpt}>
+  <Nav active="writing" />
+  <main>
+    <div class="r-px animate-up" style="max-width: 760px; margin: 0 auto; padding: 72px 40px 20px;">
+      <a href="/writing" style="background: none; border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted, #5a635e); padding: 0 0 40px; display: flex; align-items: center; gap: 6px; text-decoration: none;">← all notes</a>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e); letter-spacing: 0.04em; margin-bottom: 18px;">{post.date} · {post.tags}</div>
+      <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 48px; color: var(--ink, #141821);">{post.title}</h1>
+      <div style="border-top: 1px solid var(--border, #e3e8e6); padding-top: 40px;">
+        <div class="jc-post-body" set:html={post.content} />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

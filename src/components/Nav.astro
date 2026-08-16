@@ -1,0 +1,41 @@
+---
+interface Props {
+  active?: 'work' | 'about' | 'writing' | 'contact';
+}
+const { active } = Astro.props;
+---
+<nav class="r-nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; height: 66px; padding: 0 40px; background: var(--nav-bg, rgba(243,245,244,0.82)); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, #e3e8e6);">
+  <a href="/" style="background: none; border: none; cursor: pointer; padding: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink, #141821); text-decoration: none;">
+    jeff<span style="color:#1f9d63;">.</span>clarenz
+  </a>
+  <div style="display: flex; align-items: center; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 13px;">
+    <a class="r-nav-link" href="/work" style={`position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;`}>
+      work{active === 'work' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
+    </a>
+    <a class="r-nav-link" href="/about" style="position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;">
+      about{active === 'about' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
+    </a>
+    <a class="r-nav-link" href="/writing" style="position: relative; background: none; border: none; cursor: pointer; padding: 8px 14px; color: var(--mid, #45504b); font-family: inherit; font-size: inherit; text-decoration: none;">
+      writing{active === 'writing' && <span style="position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:#1f9d63;"></span>}
+    </a>
+    <button id="theme-toggle" title="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 8px 10px; font-size: 16px; line-height: 1; color: var(--mid, #45504b);">☾</button>
+    <a href="/contact" style="margin-left: 4px; background: #141821; border: none; cursor: pointer; padding: 9px 16px; border-radius: 3px; color: #f3f5f4; font-family: inherit; font-size: inherit; text-decoration: none;">contact</a>
+  </div>
+</nav>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    function apply(t) {
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('jc-theme', t);
+      if (btn) btn.textContent = t === 'dark' ? '☀' : '☾';
+    }
+    // Sync icon with current theme on load
+    const cur = document.documentElement.dataset.theme || 'light';
+    if (btn) btn.textContent = cur === 'dark' ? '☀' : '☾';
+    if (btn) btn.addEventListener('click', () => {
+      apply(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>

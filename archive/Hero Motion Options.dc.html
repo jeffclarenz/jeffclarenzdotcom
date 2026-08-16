@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e7e7e4; font-family: 'Instrument Sans', sans-serif; }
+
+  /* A — staggered fade-up (current) */
+  @keyframes aUp { 0% { opacity:0; transform:translateY(16px);} 24%,92% { opacity:1; transform:none;} 100%{opacity:0; transform:translateY(16px);} }
+
+  /* B — line-by-line mask reveal */
+  @keyframes bLine { 0% { transform:translateY(105%);} 30%,90% { transform:none;} 100%{transform:translateY(105%);} }
+  @keyframes bFade { 0%,30% {opacity:0;} 44%,90%{opacity:1;} 100%{opacity:0;} }
+
+  /* C — blur-in settle */
+  @keyframes cBlur { 0% { opacity:0; filter:blur(9px); transform:translateY(10px);} 30%,90%{opacity:1; filter:blur(0); transform:none;} 100%{opacity:0; filter:blur(9px);} }
+
+  /* D — accent rule grows + content fades */
+  @keyframes dRule { 0% { transform:scaleY(0);} 26%,92%{transform:scaleY(1);} 100%{transform:scaleY(0);} }
+  @keyframes dFade { 0%,10% {opacity:0; transform:translateX(10px);} 34%,90%{opacity:1; transform:none;} 100%{opacity:0;} }
+</style>
+</helmet>
+
+<section id="turn3" style="padding: 64px 56px; color: #141821;">
+  <div style="max-width: 720px; margin-bottom: 40px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8a84; margin-bottom:12px;">Turn 3 · Hero entrance motion</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:600; margin:0 0 10px;">How the whole hero arrives.</h1>
+    <p style="font-size:15px; line-height:1.6; color:#55554f; margin:0;">Headline stays one calm color — no highlighted focus word. Each loops every ~5s. Reference by badge — <a href="#3a" style="color:#141821;">3a</a> is the current staggered fade. Pick one and I'll wire it in.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+    <!-- A -->
+    <article id="3a" style="border:1px solid #d8d8d2; border-radius:4px; overflow:hidden;">
+      <div style="display:flex; justify-content:space-between; padding:12px 20px; background:#f8f8f5; border-bottom:1px solid #e4e4de; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em;"><span style="font-weight:600;">3A · STAGGERED FADE-UP</span><span style="color:#9a9a92;">CURRENT</span></div>
+      <div style="background:#141821; padding:40px 34px 34px; min-height:230px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; line-height:1.1; letter-spacing:-0.02em; color:#eef1ef; margin:0; animation:aUp 5s ease infinite;">I engineer platforms to close gaps — and fight the scroll with trivia apps.</h2>
+        <p style="font-size:14px; color:#a8b0ac; margin:18px 0 0; max-width:400px; animation:aUp 5s ease infinite; animation-delay:0.12s;">Founder &amp; CTO at burket.ph and onephp.technology.</p>
+        <div style="display:flex; gap:10px; margin-top:24px; animation:aUp 5s ease infinite; animation-delay:0.22s;">
+          <span style="background:#1f9d63; color:#08130d; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; padding:10px 16px; border-radius:3px;">view the work →</span>
+          <span style="border:1px solid #3a4048; color:#eef1ef; font-family:'JetBrains Mono',monospace; font-size:12px; padding:10px 16px; border-radius:3px;">get in touch</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- B -->
+    <article id="3b" style="border:1px solid #d8d8d2; border-radius:4px; overflow:hidden;">
+      <div style="display:flex; justify-content:space-between; padding:12px 20px; background:#f8f8f5; border-bottom:1px solid #e4e4de; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em;"><span style="font-weight:600;">3B · LINE-BY-LINE MASK REVEAL</span><span style="color:#9a9a92;">editorial</span></div>
+      <div style="background:#141821; padding:40px 34px 34px; min-height:230px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; line-height:1.15; letter-spacing:-0.02em; color:#eef1ef; margin:0;">
+          <span style="display:block; overflow:hidden;"><span style="display:block; animation:bLine 5s cubic-bezier(0.2,0.7,0.2,1) infinite;">I engineer platforms to</span></span>
+          <span style="display:block; overflow:hidden;"><span style="display:block; animation:bLine 5s cubic-bezier(0.2,0.7,0.2,1) infinite; animation-delay:0.1s;">close gaps — and fight the</span></span>
+          <span style="display:block; overflow:hidden;"><span style="display:block; animation:bLine 5s cubic-bezier(0.2,0.7,0.2,1) infinite; animation-delay:0.2s;">scroll with trivia apps.</span></span>
+        </h2>
+        <p style="font-size:14px; color:#a8b0ac; margin:18px 0 0; max-width:400px; animation:bFade 5s ease infinite;">Founder &amp; CTO at burket.ph and onephp.technology.</p>
+        <div style="display:flex; gap:10px; margin-top:24px; animation:bFade 5s ease infinite;">
+          <span style="background:#1f9d63; color:#08130d; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; padding:10px 16px; border-radius:3px;">view the work →</span>
+          <span style="border:1px solid #3a4048; color:#eef1ef; font-family:'JetBrains Mono',monospace; font-size:12px; padding:10px 16px; border-radius:3px;">get in touch</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- C -->
+    <article id="3c" style="border:1px solid #d8d8d2; border-radius:4px; overflow:hidden;">
+      <div style="display:flex; justify-content:space-between; padding:12px 20px; background:#f8f8f5; border-bottom:1px solid #e4e4de; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em;"><span style="font-weight:600;">3C · BLUR-IN SETTLE</span><span style="color:#9a9a92;">soft focus</span></div>
+      <div style="background:#141821; padding:40px 34px 34px; min-height:230px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; line-height:1.1; letter-spacing:-0.02em; color:#eef1ef; margin:0; animation:cBlur 5s ease infinite;">I engineer platforms to close gaps — and fight the scroll with trivia apps.</h2>
+        <p style="font-size:14px; color:#a8b0ac; margin:18px 0 0; max-width:400px; animation:cBlur 5s ease infinite; animation-delay:0.14s;">Founder &amp; CTO at burket.ph and onephp.technology.</p>
+        <div style="display:flex; gap:10px; margin-top:24px; animation:cBlur 5s ease infinite; animation-delay:0.26s;">
+          <span style="background:#1f9d63; color:#08130d; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; padding:10px 16px; border-radius:3px;">view the work →</span>
+          <span style="border:1px solid #3a4048; color:#eef1ef; font-family:'JetBrains Mono',monospace; font-size:12px; padding:10px 16px; border-radius:3px;">get in touch</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- D -->
+    <article id="3d" style="border:1px solid #d8d8d2; border-radius:4px; overflow:hidden;">
+      <div style="display:flex; justify-content:space-between; padding:12px 20px; background:#f8f8f5; border-bottom:1px solid #e4e4de; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em;"><span style="font-weight:600;">3D · ACCENT RULE + FADE</span><span style="color:#9a9a92;">architectural</span></div>
+      <div style="background:#141821; padding:40px 34px 34px; min-height:230px; display:flex; gap:22px;">
+        <div style="width:3px; background:#1f9d63; align-self:stretch; transform-origin:top; animation:dRule 5s cubic-bezier(0.2,0.7,0.2,1) infinite;"></div>
+        <div>
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; line-height:1.1; letter-spacing:-0.02em; color:#eef1ef; margin:0; animation:dFade 5s ease infinite;">I engineer platforms to close gaps — and fight the scroll with trivia apps.</h2>
+          <p style="font-size:14px; color:#a8b0ac; margin:18px 0 0; max-width:380px; animation:dFade 5s ease infinite; animation-delay:0.12s;">Founder &amp; CTO at burket.ph and onephp.technology.</p>
+          <div style="display:flex; gap:10px; margin-top:24px; animation:dFade 5s ease infinite; animation-delay:0.22s;">
+            <span style="background:#1f9d63; color:#08130d; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; padding:10px 16px; border-radius:3px;">view the work →</span>
+            <span style="border:1px solid #3a4048; color:#eef1ef; font-family:'JetBrains Mono',monospace; font-size:12px; padding:10px 16px; border-radius:3px;">get in touch</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div style="max-width:720px; margin-top:36px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.8; color:#6a6a64;">
+    <span style="color:#3a3a34; font-weight:600;">MY READ →</span> <span style="color:#3a3a34;">3B line-by-line</span> feels the most intentional and editorial — reads like the statement is being set. <span style="color:#3a3a34;">3D accent rule</span> ties to your infra/architecture identity. 3C is elegant but softer; 3A is fine but generic.
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

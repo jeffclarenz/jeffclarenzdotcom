@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="About — Jeff Clarenz">
+  <Nav active="about" />
+  <main>
+    <div class="r-px animate-up" style="max-width: 1000px; margin: 0 auto; padding: 72px 40px 20px;">
+      <div class="r-about-grid" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start;">
+        <div>
+          <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margin: 0 0 28px;">A CTO who still loves to build the thing himself.</h1>
+          <p style="font-size: 16px; line-height: 1.7; color: var(--body-text, #3a423d); margin: 0 0 18px;">I'm Jeff — a startup founder and CTO. I work across software development, DevOps, architecture, and infrastructure, and I care most about small useful things that actually ship and stay reliable.</p>
+          <p style="font-size: 16px; line-height: 1.7; color: var(--body-text, #3a423d); margin: 0 0 18px;">Over the past year, AI-assisted coding has completely changed how I build — I've become dramatically more productive, moving from idea to shipped software faster than ever, without letting quality slide.</p>
+          <p style="font-size: 16px; line-height: 1.7; color: var(--body-text, #3a423d); margin: 0;">Alongside the company work, I ship my own apps — a trivia game on the App Store, and an "anti brain-rot" app that borrows the short-feed format to make people a little smarter instead of a little duller.</p>
+
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 48px 0 18px;">— how i work</div>
+          <div style="display: grid; gap: 14px;">
+            <div style="display: flex; gap: 14px;"><span style="color:#1f9d63; font-family:'JetBrains Mono',monospace;">→</span><p style="margin:0; font-size:15px; line-height:1.6; color:#3a423d;">Keep infrastructure boring and predictable so the product can be interesting.</p></div>
+            <div style="display: flex; gap: 14px;"><span style="color:#1f9d63; font-family:'JetBrains Mono',monospace;">→</span><p style="margin:0; font-size:15px; line-height:1.6; color:#3a423d;">Use AI as an amplifier, not an autopilot — taste and judgement still matter.</p></div>
+            <div style="display: flex; gap: 14px;"><span style="color:#1f9d63; font-family:'JetBrains Mono',monospace;">→</span><p style="margin:0; font-size:15px; line-height:1.6; color:#3a423d;">Ship small, ship often, and let real usage decide what to build next.</p></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="border: 1px solid var(--border, #e3e8e6); border-radius: 4px; background: var(--surface, #fff); padding: 22px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--subtle, #9aa39e); text-transform: uppercase;">Toolbelt</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">system architecture</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">cloud infra</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">devops / ci-cd</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">backend</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">mobile</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">ai-assisted dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

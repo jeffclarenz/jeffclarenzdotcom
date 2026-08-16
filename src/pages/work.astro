@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Work — Jeff Clarenz">
+  <Nav active="work" />
+  <main>
+    <div class="r-px animate-up" style="max-width: 1000px; margin: 0 auto; padding: 72px 40px 20px;">
+      <h1 class="r-page-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -0.025em; margin: 0; max-width: 720px; line-height: 1.08;">Things I've built, and the companies I build them at.</h1>
+
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 24px;">— apps</div>
+
+      <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
+        <div class="r-work-img" style="height: 240px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">trivia game — 2–3 shots</span></div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 01 · iOS · LIVE ON APP STORE</div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">Trivia game</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A fast, replayable trivia game shipped to the App Store — designed, built, and released end to end. Clean gameplay loop, snappy feel, and an infrastructure that stays out of the way.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">product</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">mobile</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">backend + infra</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
+        <div class="r-work-img" style="height: 240px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">anti brain-rot — feed shots</span></div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 02 · iOS · IN PROGRESS</div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">Anti brain-rot</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">The addictive short-feed format — pointed somewhere useful. Instead of endless scroll, a vertical feed of trivia that leaves you a little sharper than it found you.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">concept</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">feed design</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">content engine</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 8px;">— companies</div>
+      <div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border, #e3e8e6);">
+          <div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 0;">onephp.technology</h3>
+            <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 8px 0 0; max-width: 560px;">Founder &amp; CTO. Software engineering and platform work — architecture, infrastructure, and delivery.</p>
+          </div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1f9d63; white-space: nowrap;">Founder · CTO</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border, #e3e8e6);">
+          <div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 0;">burket.ph</h3>
+            <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 8px 0 0; max-width: 560px;">CTO. Leading engineering, infrastructure, and the technical direction of the product.</p>
+          </div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1f9d63; white-space: nowrap;">CTO</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

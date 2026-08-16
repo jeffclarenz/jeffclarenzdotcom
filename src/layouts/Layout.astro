@@ -1,0 +1,93 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Jeff Clarenz — Engineer · Founder · CTO',
+  description = 'Architecture, infrastructure, and the apps themselves — designed and built hands-on.',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141821'/%3E%3Ctext x='11' y='44' font-family='Space Grotesk, sans-serif' font-size='34' font-weight='600' letter-spacing='-2' fill='%23eef1ef'%3Ej%3Ctspan fill='%232bb377'%3E.%3C/tspan%3Ec%3C/text%3E%3C/svg%3E" />
+  <script is:inline>
+    (function(){
+      var t=localStorage.getItem('jc-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.dataset.theme=t;
+    })();
+  </script>
+  <style is:global>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg, #f3f5f4); font-family: 'Instrument Sans', sans-serif; color: var(--ink, #141821); -webkit-font-smoothing: antialiased; }
+    ::selection { background: #1f9d63; color: #fff; }
+    :root {
+      --bg: #f3f5f4; --surface: #fff; --ink: #141821;
+      --body-text: #3a423d; --muted: #5a635e; --mid: #45504b;
+      --subtle: #9aa39e; --subtle2: #7a827d; --border: #e3e8e6;
+      --nav-bg: rgba(243,245,244,0.82);
+    }
+    [data-theme="dark"] {
+      --bg: #0f1318; --surface: #161d27; --ink: #eef1ef;
+      --body-text: #8a9099; --muted: #6a7580; --mid: #7a8590;
+      --subtle: #4a5560; --subtle2: #3a454f; --border: #1e2a38;
+      --nav-bg: rgba(13,17,23,0.92);
+    }
+    @keyframes jcUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes jcBlink { 0%, 48% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes jcRule { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    @keyframes jcFadeX { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+    .animate-up { animation: jcUp 0.4s ease both; }
+    .jc-post-body h2 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; margin: 40px 0 12px; color: var(--ink); letter-spacing: -0.01em; }
+    .jc-post-body p { font-size: 16px; line-height: 1.78; color: var(--body-text); margin: 0 0 20px; }
+    .jc-post-body p:last-child { margin-bottom: 0; }
+    .jc-post-body strong { color: var(--ink); font-weight: 600; }
+    .jc-post-body em { font-style: italic; }
+    @media (max-width: 900px) {
+      .r-about-grid { grid-template-columns: 1fr !important; }
+      .r-work-item  { grid-template-columns: 1fr !important; }
+      .r-work-img   { height: 180px !important; }
+      .r-h1         { font-size: 50px !important; }
+    }
+    @media (max-width: 640px) {
+      .r-nav        { padding: 0 20px !important; height: 56px !important; }
+      .r-nav-link   { padding: 8px 9px !important; font-size: 12px !important; }
+      .r-hero       { padding: 68px 20px 0 !important; }
+      .r-h1         { font-size: 34px !important; line-height: 1.1 !important; letter-spacing: -0.02em !important; }
+      .r-sub        { font-size: 15px !important; margin-top: 20px !important; }
+      .r-btns       { flex-wrap: wrap !important; }
+      .r-stats      { grid-template-columns: 1fr !important; margin-top: 36px !important; }
+      .r-stat-mid   { border-left: none !important; border-top: 1px solid #262c34 !important; padding: 16px 0 24px !important; }
+      .r-stat-right { border-left: none !important; border-top: 1px solid #262c34 !important; padding: 16px 0 24px !important; }
+      .r-3col       { grid-template-columns: 1fr !important; }
+      .r-2col       { grid-template-columns: 1fr !important; }
+      .r-4col       { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .r-px         { padding-left: 20px !important; padding-right: 20px !important; }
+      .r-pt         { padding-top: 56px !important; }
+      .r-rule       { display: none !important; }
+      .r-work-item  { grid-template-columns: 1fr !important; }
+      .r-work-img   { height: 160px !important; }
+      .r-about-grid { grid-template-columns: 1fr !important; }
+      .r-page-h1    { font-size: 28px !important; line-height: 1.15 !important; }
+      .r-email      { font-size: 20px !important; word-break: break-all !important; }
+      .r-3links     { grid-template-columns: 1fr !important; }
+      .r-cta        { padding: 32px 20px !important; flex-direction: column !important; align-items: flex-start !important; }
+      .r-footer     { padding-left: 20px !important; padding-right: 20px !important; }
+    }
+  </style>
+</head>
+<body>
+  <div style="min-height: 100vh; overflow-x: hidden;">
+    <slot />
+  </div>
+</body>
+</html>
