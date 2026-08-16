@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout>
   <Nav />
-  <main>
+  <main style="flex: 1;">
     <!-- HERO -->
     <section class="r-hero" style="position: relative; background: #141821; color: #eef1ef; padding: 128px 40px 0; overflow: hidden;">
       <canvas id="hero-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
@@ -14,10 +14,10 @@ import Footer from '../components/Footer.astro';
       <div style="position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; display: flex; gap: 30px;">
         <div class="r-rule" style="width: 3px; flex: none; background: #1f9d63; align-self: stretch; transform-origin: top; animation: jcRule 0.7s cubic-bezier(0.2,0.7,0.2,1) 0.05s both;"></div>
         <div style="flex: 1; min-width: 0;">
-          <h1 class="r-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 68px; font-weight: 600; line-height: 1.02; letter-spacing: -0.03em; margin: 0; max-width: 900px; animation: jcFadeX 0.6s 0.18s ease both;">Building platforms that bridge the gaps,<br>fighting the scroll with smarter apps.</h1>
-          <p class="r-sub" style="font-size: 18px; line-height: 1.6; color: #a8b0ac; max-width: 620px; margin: 28px 0 0; animation: jcFadeX 0.6s 0.3s ease both;">Architecture, infrastructure, and the apps themselves — designed and built hands-on. Founder &amp; CTO at burket.ph and onephp.technology.</p>
+          <h1 class="r-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 68px; font-weight: 600; line-height: 1.02; letter-spacing: -0.03em; margin: 0; max-width: 900px; animation: jcFadeX 0.6s 0.18s ease both;">Founder, CTO, and still the one writing the code.</h1>
+          <p class="r-sub" style="font-size: 18px; line-height: 1.6; color: #a8b0ac; max-width: 620px; margin: 28px 0 0; animation: jcFadeX 0.6s 0.3s ease both;">I build and run business software and consumer apps. Based in the Philippines, working hands-on across architecture, infrastructure, and development.</p>
           <div class="r-btns" style="display: flex; gap: 12px; margin-top: 40px; animation: jcFadeX 0.6s 0.42s ease both;">
-            <a href="/work" style="cursor: pointer; background: #1f9d63; border: none; color: #08130d; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 13px 22px; border-radius: 3px; text-decoration: none;">view the work →</a>
+            <a href="/work" style="cursor: pointer; background: #1f9d63; border: none; color: #08130d; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 13px 22px; border-radius: 3px; text-decoration: none;">see the work →</a>
             <a href="/contact" style="cursor: pointer; background: transparent; border: 1px solid #3a4048; color: #eef1ef; font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 13px 22px; border-radius: 3px; text-decoration: none;">get in touch</a>
           </div>
         </div>
@@ -25,15 +25,15 @@ import Footer from '../components/Footer.astro';
       <div class="r-stats" style="position: relative; z-index: 1; max-width: 1000px; margin: 84px auto 0; border-top: 1px solid #262c34; display: grid; grid-template-columns: repeat(3, 1fr);">
         <div style="padding: 22px 32px 30px 0;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Role</div>
-          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Engineer · Founder · CTO</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Founder · CTO · Engineer</div>
         </div>
         <div class="r-stat-mid" style="padding: 22px 32px 30px; border-left: 1px solid #262c34;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Based</div>
-          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Philippines · building for everywhere</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">Philippines</div>
         </div>
         <div class="r-stat-right" style="padding: 22px 0 30px 32px; border-left: 1px solid #262c34;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Shipping</div>
-          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">2 consumer apps + platform work</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6a7078; letter-spacing: 0.08em; text-transform: uppercase;">Stack</div>
+          <div style="font-size: 15px; margin-top: 10px; color: #dfe3e0;">ASP.NET Core · C# · Azure · AWS</div>
         </div>
       </div>
     </section>
@@ -42,16 +42,16 @@ import Footer from '../components/Footer.astro';
     <section class="r-px r-pt" style="max-width: 1000px; margin: 0 auto; padding: 96px 40px 20px;">
       <div class="r-3col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
         <div>
-          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">Architecture</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">System design that survives contact with production — clear boundaries, sensible tradeoffs, room to grow.</p>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">Business software</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">I build platforms for real business operations: HR, warehouse management, service operations, POS. Built to run reliably, not to look good in a demo.</p>
         </div>
         <div>
-          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">DevOps &amp; Infra</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Pipelines, environments, and reliability that stay boring — so the interesting work can keep moving.</p>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">Infrastructure</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Deployed across Azure and AWS. Consistent environments, automated pipelines, and stable releases. I prefer boring infrastructure.</p>
         </div>
         <div>
-          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">AI-assisted delivery</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Engineering amplified by AI — shipping more, faster, without losing the plot on quality.</p>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; margin: 0 0 8px;">Consumer apps</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 0;">Two apps in active development alongside the business work. A trivia game and a short-form trivia feed app.</p>
         </div>
       </div>
     </section>
@@ -59,7 +59,7 @@ import Footer from '../components/Footer.astro';
     <!-- APPS -->
     <section class="r-px r-pt" style="max-width: 1000px; margin: 0 auto; padding: 72px 40px 20px;">
       <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px;">
-        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin: 0;">Apps I've shipped</h2>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin: 0;">Apps I'm building</h2>
         <a href="/work" style="background: none; border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted, #5a635e); text-decoration: none;">all work →</a>
       </div>
       <div class="r-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
@@ -68,7 +68,7 @@ import Footer from '../components/Footer.astro';
           <div style="padding: 20px 22px;">
             <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 01 <span style="color:#9aa39e;">· iOS · live</span></div>
             <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 10px 0 6px;">Trivia game</h3>
-            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">A fast, replayable trivia experience — shipped to the App Store.</p>
+            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">A fast, replayable trivia game. Live on the App Store.</p>
           </div>
         </div>
         <div style="background: var(--surface, #fff); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; overflow: hidden;">
@@ -76,7 +76,7 @@ import Footer from '../components/Footer.astro';
           <div style="padding: 20px 22px;">
             <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 02 <span style="color:#9aa39e;">· iOS · in progress</span></div>
             <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 10px 0 6px;">Anti brain-rot</h3>
-            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">TikTok's format, pointed at trivia — a feed that makes you a little smarter.</p>
+            <p style="font-size: 14px; line-height: 1.55; color: var(--muted, #5a635e); margin: 0;">A vertical trivia feed. Same format as short-form video, different content. In progress.</p>
           </div>
         </div>
       </div>
@@ -86,8 +86,8 @@ import Footer from '../components/Footer.astro';
     <section class="r-px" style="max-width: 1000px; margin: 88px auto 0; padding: 0 40px;">
       <div class="r-cta" style="background: #141821; border-radius: 4px; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
         <div>
-          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600; color: #eef1ef; margin: 0; letter-spacing: -0.02em;">Building something? Found one of my apps?</h2>
-          <p style="font-size: 15px; color: #a8b0ac; margin: 12px 0 0;">Always happy to talk software, infra, or trivia.</p>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600; color: #eef1ef; margin: 0; letter-spacing: -0.02em;">Working on something? Want to talk software?</h2>
+          <p style="font-size: 15px; color: #a8b0ac; margin: 12px 0 0;">Happy to talk — software, infrastructure, or one of the apps.</p>
         </div>
         <a href="/contact" style="cursor: pointer; background: #1f9d63; border: none; color: #08130d; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 14px 26px; border-radius: 3px; white-space: nowrap; text-decoration: none;">say hello →</a>
       </div>

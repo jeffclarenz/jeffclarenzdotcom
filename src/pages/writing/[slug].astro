@@ -16,7 +16,7 @@ const { post } = Astro.props;
 ---
 <Layout title={`${post.title} — Jeff Clarenz`} description={post.excerpt}>
   <Nav active="writing" />
-  <main>
+  <main style="flex: 1;">
     <div class="r-px animate-up" style="max-width: 760px; margin: 0 auto; padding: 72px 40px 20px;">
       <a href="/writing" style="background: none; border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted, #5a635e); padding: 0 0 40px; display: flex; align-items: center; gap: 6px; text-decoration: none;">← all notes</a>
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e); letter-spacing: 0.04em; margin-bottom: 18px;">{post.date} · {post.tags}</div>

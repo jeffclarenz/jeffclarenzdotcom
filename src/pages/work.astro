@@ -5,55 +5,89 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout title="Work — Jeff Clarenz">
   <Nav active="work" />
-  <main>
+  <main style="flex: 1;">
     <div class="r-px animate-up" style="max-width: 1000px; margin: 0 auto; padding: 72px 40px 20px;">
-      <h1 class="r-page-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -0.025em; margin: 0; max-width: 720px; line-height: 1.08;">Things I've built, and the companies I build them at.</h1>
+      <h1 class="r-page-h1" style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -0.025em; margin: 0; max-width: 720px; line-height: 1.08;">What I've built.</h1>
 
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 24px;">— apps</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 24px;">— business platforms</div>
 
       <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
-        <div class="r-work-img" style="height: 240px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">trivia game — 2–3 shots</span></div>
+        <div class="r-work-img" style="height: 200px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">screenshot</span></div>
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 01 · iOS · LIVE ON APP STORE</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">B2B MARKETPLACE · LIVE</div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">Burket.ph</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A B2B marketplace platform. I lead engineering and infrastructure, and I'm involved in the architecture and direction of the product.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">ASP.NET Core</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">C#</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">MySQL</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
+        <div class="r-work-img" style="height: 200px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">screenshot</span></div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">BUSINESS MANAGEMENT SUITE · LIVE</div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">onephp.technology</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A suite of business management systems I founded and built. Covers HR, warehouse operations, IT service management, and field service — each a standalone system, built on the same stack.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">OneHRIS</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">OneWMS</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">OneITSM</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">OneService</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">ASP.NET Core</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">C#</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">MySQL</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
+        <div class="r-work-img" style="height: 200px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">screenshot</span></div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">SELF-ORDERING SYSTEM · LIVE</div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">OnePOS</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A self-ordering POS system with customized hardware deployments. Currently deployed at Pradera Islands Theme Park. I handled the software architecture, hardware spec, and deployment.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">ASP.NET Core</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">C#</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">hardware deployment</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 24px;">— consumer apps</div>
+
+      <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
+        <div class="r-work-img" style="height: 200px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">app store screenshots</span></div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">iOS · LIVE ON APP STORE</div>
           <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">Trivia game</h2>
-          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A fast, replayable trivia game shipped to the App Store — designed, built, and released end to end. Clean gameplay loop, snappy feel, and an infrastructure that stays out of the way.</p>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A fast, replayable trivia game. Designed, built, and released independently. I handled everything from the game logic to the App Store submission.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">product</span>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">mobile</span>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">backend + infra</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">iOS</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">backend</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">AWS</span>
           </div>
         </div>
       </div>
 
       <div class="r-work-item" style="display: grid; grid-template-columns: 340px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border, #e3e8e6); align-items: start;">
-        <div class="r-work-img" style="height: 240px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">anti brain-rot — feed shots</span></div>
+        <div class="r-work-img" style="height: 200px; background: repeating-linear-gradient(45deg, #eef1ef, #eef1ef 11px, #e7ebe9 11px, #e7ebe9 22px); border: 1px solid var(--border, #e3e8e6); border-radius: 4px; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--subtle, #9aa39e);">feed screenshots</span></div>
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">APP 02 · iOS · IN PROGRESS</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #1f9d63;">iOS · IN PROGRESS</div>
           <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; margin: 10px 0 12px;">Anti brain-rot</h2>
-          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">The addictive short-feed format — pointed somewhere useful. Instead of endless scroll, a vertical feed of trivia that leaves you a little sharper than it found you.</p>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--muted, #5a635e); margin: 0 0 18px; max-width: 520px;">A vertical trivia feed app. Uses the same format as short-form video but the content is trivia. The feed works; still refining the content pipeline before release.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">concept</span>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">feed design</span>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">content engine</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">iOS</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">content pipeline</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid, #45504b); border: 1px solid var(--border, #dbe0dd); border-radius: 999px; padding: 5px 12px;">AWS</span>
           </div>
-        </div>
-      </div>
-
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle, #9aa39e); margin: 64px 0 8px;">— companies</div>
-      <div>
-        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border, #e3e8e6);">
-          <div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 0;">onephp.technology</h3>
-            <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 8px 0 0; max-width: 560px;">Founder &amp; CTO. Software engineering and platform work — architecture, infrastructure, and delivery.</p>
-          </div>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1f9d63; white-space: nowrap;">Founder · CTO</span>
-        </div>
-        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border, #e3e8e6);">
-          <div>
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin: 0;">burket.ph</h3>
-            <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted, #5a635e); margin: 8px 0 0; max-width: 560px;">CTO. Leading engineering, infrastructure, and the technical direction of the product.</p>
-          </div>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1f9d63; white-space: nowrap;">CTO</span>
         </div>
       </div>
     </div>
