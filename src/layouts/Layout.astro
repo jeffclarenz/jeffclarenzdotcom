@@ -2,11 +2,14 @@
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 const {
   title = 'Jeff Clarenz — Engineer · Founder · CTO',
   description = 'Architecture, infrastructure, and the apps themselves — designed and built hands-on.',
+  image = 'https://jeffclarenz.com/og-default.png',
 } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +18,43 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:site_name" content="Jeff Clarenz" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jeff Clarenz",
+    "url": "https://jeffclarenz.com",
+    "jobTitle": "Founder, CTO & Engineer",
+    "description": description,
+    "knowsAbout": ["ASP.NET Core", "C#", "Azure", "AWS", "iOS", "Software Architecture"],
+    "sameAs": [
+      "https://github.com/jeffclarenz",
+      "https://x.com/jeffclarenz",
+      "https://linkedin.com/in/jeffclarenz"
+    ]
+  })} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://basemaps.cartocdn.com" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" /></noscript>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141821'/%3E%3Ctext x='11' y='44' font-family='Space Grotesk, sans-serif' font-size='34' font-weight='600' letter-spacing='-2' fill='%23eef1ef'%3Ej%3Ctspan fill='%232bb377'%3E.%3C/tspan%3Ec%3C/text%3E%3C/svg%3E" />
   <script is:inline>
     (function(){
