@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><radialGradient id="g" cx="51%" cy="85%" r="75%"><stop offset="0" stop-color="#c2410c" stop-opacity=".55"/><stop offset="1" stop-color="#2a1a10" stop-opacity="0"/></radialGradient>
+<pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="20" height="40" fill="#fff" fill-opacity=".025"/></pattern></defs>
+<rect width="1200" height="900" fill="#2a1a10"/><rect width="1200" height="900" fill="url(#g)"/><rect width="1200" height="900" fill="url(#p)"/>
+<path d="M0 760 Q 300 670 600 720 T 1200 656 V900 H0Z" fill="#000" fill-opacity=".35"/>
+<text x="60" y="130" font-family="Impact, Anton, sans-serif" font-size="96" fill="#f3ede6" fill-opacity=".9">ROUND 3</text>
+<text x="64" y="185" font-family="Arial, sans-serif" font-size="30" letter-spacing="6" fill="#f3ede6" fill-opacity=".55">NESR 2026 · PHOTO PLACEHOLDER</text>
+</svg>
