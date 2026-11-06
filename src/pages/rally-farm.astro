@@ -190,16 +190,11 @@ const rowB = fill(odd.length ? odd : photos);
 
   /* package */
   .package-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
-  .price-card {
-    position: relative; border-radius: 20px; padding: 40px; overflow: hidden;
-    background: linear-gradient(155deg, #3a2614 0%, #1e1711 60%);
-    border: 1px solid rgba(192,138,82,.35);
-  }
-  .price-card::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: radial-gradient(circle, rgba(192,138,82,.35), transparent 70%); pointer-events: none; }
-  .price { font-family: 'Anton', sans-serif; font-size: clamp(72px, 10vw, 112px); line-height: 1; margin: 0 0 4px; }
-  .price sup { font-size: .45em; vertical-align: top; position: relative; top: .25em; margin-right: 4px; color: var(--dirt); }
-  .price-card .per { color: var(--muted); font-family: 'Barlow Condensed', sans-serif; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
-  .incl { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 14px; }
+  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 40px; }
+  .price-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; text-transform: uppercase; margin: 0; letter-spacing: .02em; }
+  .price-card .fee { margin: 10px 0 0; color: var(--muted); }
+  .price-card .fee strong { color: var(--text); font-weight: 600; }
+  .incl { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
   .incl li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; font-size: 18px; }
   .incl svg { flex: none; width: 22px; height: 22px; color: var(--dirt); margin-top: 3px; }
   .pay-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; }
@@ -435,8 +430,8 @@ const rowB = fill(odd.length ? odd : photos);
     </div>
     <div class="package-grid">
       <div class="price-card reveal">
-        <div class="price"><sup>₱</sup>2,000</div>
-        <div class="per">Per driver · per car</div>
+        <h3>What's included</h3>
+        <p class="fee">Entry is <strong>₱2,000</strong> per driver, per car.</p>
         <ul class="incl">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Unlimited runs, all afternoon</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Lunch included</li>
