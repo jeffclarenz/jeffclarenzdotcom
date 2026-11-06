@@ -21,7 +21,7 @@ const rowB = fill(odd.length ? odd : photos);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Rally Farm Dirt Autocross · NESR 2026 Awarding</title>
-<meta name="description" content="Rally Farm Dirt Autocross & NESR 2026 Awarding — December 5, 2026. Unlimited runs + lunch for ₱2,000. Register now.">
+<meta name="description" content="Rally Farm Dirt Autocross & NESR 2026 Awarding — December 5, 2026. Unlimited runs + lunch for ₱2,000.">
 <meta property="og:title" content="Rally Farm Dirt Autocross & NESR 2026 Awarding">
 <meta property="og:description" content="Dec 5, 2026 · Unlimited runs + lunch · ₱2,000 · Awarding & Christmas Party">
 <meta property="og:image" content="https://jeffclarenz.com/rally-farm/poster.jpg">
@@ -71,8 +71,8 @@ const rowB = fill(odd.length ? odd : photos);
     padding: 15px 26px; border-radius: 999px; border: 2px solid transparent; cursor: pointer;
     transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
   }
-  .btn-primary { background: var(--dirt); color: #1a1109; box-shadow: 0 10px 30px -10px rgba(192,138,82,.7); }
-  .btn-primary:hover { transform: translateY(-2px); background: #cf9a62; }
+  .btn-primary { background: var(--dirt); color: #1a1109; }
+  .btn-primary:hover { background: #cf9a62; }
   .btn-ghost { border-color: #4a423a; color: var(--text); }
   .btn-ghost:hover { border-color: var(--dirt); color: var(--dirt); }
 
@@ -93,7 +93,6 @@ const rowB = fill(odd.length ? odd : photos);
   nav.top ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
   nav.top ul a { text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; color: var(--muted); }
   nav.top ul a:hover { color: var(--text); }
-  nav.top .btn { padding: 9px 18px; font-size: 14px; }
 
   /* ---------- hero ---------- */
   .hero { position: relative; padding: 72px 0 96px; min-height: 100vh; display: flex; align-items: center; isolation: isolate; }
@@ -196,7 +195,7 @@ const rowB = fill(odd.length ? odd : photos);
   .price { font-family: 'Anton', sans-serif; font-size: clamp(72px, 10vw, 112px); line-height: 1; margin: 0 0 4px; }
   .price sup { font-size: .45em; vertical-align: top; position: relative; top: .25em; margin-right: 4px; color: var(--dirt); }
   .price-card .per { color: var(--muted); font-family: 'Barlow Condensed', sans-serif; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
-  .incl { list-style: none; padding: 0; margin: 30px 0 34px; display: grid; gap: 14px; }
+  .incl { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 14px; }
   .incl li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; font-size: 18px; }
   .incl svg { flex: none; width: 22px; height: 22px; color: var(--dirt); margin-top: 3px; }
   .pay-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; }
@@ -257,11 +256,6 @@ const rowB = fill(odd.length ? odd : photos);
   footer .sponsor { display: flex; align-items: center; gap: 12px; }
   footer .sponsor img { height: 40px; width: auto; border-radius: 6px; }
 
-  /* mobile sticky cta */
-  .sticky-cta { display: none; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; transform: translateY(140%); transition: transform .35s ease; }
-  .sticky-cta.show { transform: none; }
-  .sticky-cta .btn { width: 100%; }
-
   /* reveal */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -290,13 +284,10 @@ const rowB = fill(odd.length ? odd : photos);
     .price-card, .pay-card { padding: 28px 22px; }
     .hero-logo { height: 52px; }
     .hero h1 .autocross { -webkit-text-stroke-width: 1.5px; text-shadow: 3px 4px 0 #2a0905; }
-    .hero .ctas .btn { flex: 1; }
     .countdown b { font-size: 28px; }
     .form-shell iframe { height: 1700px; }
     .gallery { padding-top: 76px; }
     .shot { height: 170px; }
-    .sticky-cta { display: block; }
-    nav.top .btn { display: none; }
   }
 </style>
 </head>
@@ -312,7 +303,6 @@ const rowB = fill(odd.length ? odd : photos);
       <li><a href="#package">Package</a></li>
       <li><a href="#register">Register</a></li>
     </ul>
-    <a href="#register" class="btn btn-primary">Register</a>
   </div>
 </nav>
 
@@ -331,9 +321,7 @@ const rowB = fill(odd.length ? odd : photos);
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-venue-short>RallyFarm · Nueva Ecija</span></span>
     </div>
     <div class="ctas">
-      <a href="#register" class="btn btn-primary">Register now · ₱2,000
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="#schedule" class="btn btn-ghost">See schedule</a>
+      <a href="#register" class="btn btn-primary">Register</a>
     </div>
     <div class="countdown" id="countdown" aria-label="Countdown to event">
       <div><b data-cd="d">--</b><span>Days</span></div>
@@ -347,8 +335,8 @@ const rowB = fill(odd.length ? odd : photos);
 
 <div class="tape" aria-hidden="true">
   <div class="tape-track">
-    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span><span>₱2,000 all-in</span>
-    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span><span>₱2,000 all-in</span>
+    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span>
+    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span>
   </div>
 </div>
 
@@ -459,7 +447,6 @@ const rowB = fill(odd.length ? odd : photos);
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>NESR 2026 Awarding ceremony</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Christmas party access</li>
         </ul>
-        <a href="#register" class="btn btn-primary">Secure your slot</a>
       </div>
 
       <div class="pay-card reveal">
@@ -516,7 +503,6 @@ const rowB = fill(odd.length ? odd : photos);
   </div>
 </footer>
 
-<div class="sticky-cta"><a href="#register" class="btn btn-primary">Register · ₱2,000</a></div>
 
 <script>
   // ============ EVENT CONFIG: edit these ============
@@ -584,11 +570,10 @@ const rowB = fill(odd.length ? odd : photos);
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classList.remove('open'); });
 
-  // Nav + mobile CTA appear once the hero scrolls out of view
-  const nav = document.querySelector('nav.top'), sticky = document.querySelector('.sticky-cta');
+  // Nav appears once the hero scrolls out of view
+  const nav = document.querySelector('nav.top');
   new IntersectionObserver(([en]) => {
     nav.classList.toggle('show', !en.isIntersecting);
-    sticky.classList.toggle('show', !en.isIntersecting);
   }, { rootMargin: '-64px 0px 0px 0px' }).observe(document.getElementById('top'));
 
   // Scroll reveal
