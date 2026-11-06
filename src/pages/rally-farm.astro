@@ -54,7 +54,7 @@ const rowB = fill(odd.length ? odd : photos);
   }
   .serif { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; text-transform: none; letter-spacing: 0; }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
   body {
     margin: 0; color: var(--text);
     background:
@@ -159,6 +159,7 @@ const rowB = fill(odd.length ? odd : photos);
 
   /* ---------- tape ---------- */
   /* tyre-tread ribbon */
+  .tape-wrap { overflow-x: clip; } /* ribbon is wider than the screen; clip it so phones cannot scroll sideways */
   .tape { background: var(--dirt); overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
   .tape-track {
     height: 24px; opacity: .85;
@@ -347,9 +348,9 @@ const rowB = fill(odd.length ? odd : photos);
   <a href="#season" class="scroll-cue" aria-label="Scroll down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
 </header>
 
-<div class="tape" aria-hidden="true">
+<div class="tape-wrap"><div class="tape" aria-hidden="true">
   <div class="tape-track"></div>
-</div>
+</div></div>
 
 <section class="gallery" id="season">
   <div class="wrap">
