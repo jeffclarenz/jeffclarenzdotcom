@@ -145,10 +145,14 @@ const rowB = fill(odd.length ? odd : photos);
   .countdown span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; }
 
   /* ---------- tape ---------- */
-  .tape { background: var(--dirt); color: #1a1109; overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
-  .tape-track { display: flex; gap: 40px; width: max-content; padding: 12px 0; animation: scroll 32s linear infinite; }
-  .tape-track span { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 22px; letter-spacing: .04em; white-space: nowrap; }
-  .tape-track span::after { content: "✦"; margin-left: 40px; }
+  /* tyre-tread ribbon */
+  .tape { background: var(--dirt); overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
+  .tape-track {
+    height: 44px; opacity: .85;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='44' viewBox='0 0 56 44'><g fill='%231a1109'><path d='M4 3h16l8 9-8 9H4l8-9z'/><path d='M32 23h16l8 9-8 9H32l8-9z'/><path d='M-24 23h16l8 9-8 9h-16l8-9z'/></g></svg>") 0 0 / 56px 44px repeat-x;
+    animation: tread 1.6s linear infinite;
+  }
+  @keyframes tread { to { background-position: 56px 0; } }
   @keyframes scroll { to { transform: translateX(-50%); } }
 
   /* ---------- sections ---------- */
@@ -332,10 +336,7 @@ const rowB = fill(odd.length ? odd : photos);
 </header>
 
 <div class="tape" aria-hidden="true">
-  <div class="tape-track">
-    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span>
-    <span>Unlimited runs</span><span>Lunch included</span><span>NESR 2026 Awarding</span><span>Christmas party</span><span>Dec 5 2026</span>
-  </div>
+  <div class="tape-track"></div>
 </div>
 
 <section class="gallery" id="season">
