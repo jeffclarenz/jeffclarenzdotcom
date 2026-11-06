@@ -33,15 +33,15 @@ const rowB = fill(odd.length ? odd : photos);
   /* Event config lives in the <script is:inline> at the bottom (FORM_URL, venue, payment). */
 
   :root {
-    /* RallyFarm brand: logo green, poster red/navy/cream, promo orange, dirt browns */
+    /* Dirt Autocross palette: neutral browns (NESR keeps green). Navy DIRT + red AUTOCROSS are a nod to PACS. */
     --bg: #110d09;
     --bg-2: #18120c;
     --card: #1e1711;
     --line: #3a2c1f;
     --text: #f4e6cc;      /* poster cream */
     --muted: #b5a487;
-    --dirt: #23a356;      /* RallyFarm green (primary accent) */
-    --dirt-2: #f5a01f;    /* promo orange */
+    --dirt: #c08a52;      /* tan (primary accent) */
+    --dirt-2: #e0b47c;    /* sand */
     --red: #d4291c;       /* AUTOCROSS red */
     --navy: #14415f;      /* DIRT badge */
     --mud: #6b4a2e;
@@ -71,8 +71,8 @@ const rowB = fill(odd.length ? odd : photos);
     padding: 15px 26px; border-radius: 999px; border: 2px solid transparent; cursor: pointer;
     transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
   }
-  .btn-primary { background: var(--dirt); color: #fff; box-shadow: 0 10px 30px -10px rgba(35,163,86,.7); }
-  .btn-primary:hover { transform: translateY(-2px); background: #2bb862; }
+  .btn-primary { background: var(--dirt); color: #1a1109; box-shadow: 0 10px 30px -10px rgba(192,138,82,.7); }
+  .btn-primary:hover { transform: translateY(-2px); background: #cf9a62; }
   .btn-ghost { border-color: #4a423a; color: var(--text); }
   .btn-ghost:hover { border-color: var(--dirt); color: var(--dirt); }
 
@@ -85,6 +85,9 @@ const rowB = fill(odd.length ? odd : photos);
   nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .brand { display: block; text-decoration: none; }
   .brand img { height: 36px; width: auto; border-radius: 6px; }
+  .wordmark { display: flex; align-items: center; gap: 8px; }
+  .wm-dirt { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 16px; line-height: 1; color: #fff; background: var(--navy); border: 2px solid var(--text); border-radius: 5px; padding: 4px 8px 3px; transform: rotate(-3deg); }
+  .wm-auto { font-family: 'Saira Condensed', sans-serif; font-style: italic; font-weight: 900; text-transform: uppercase; font-size: 24px; line-height: 1; color: var(--red); transform: skewX(-8deg); }
   nav.top ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
   nav.top ul a { text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; color: var(--muted); }
   nav.top ul a:hover { color: var(--text); }
@@ -108,7 +111,6 @@ const rowB = fill(odd.length ? odd : photos);
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
   .hero-logos { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .hero-logos img { height: 64px; width: auto; border-radius: 8px; box-shadow: 0 8px 24px -8px rgba(0,0,0,.8); }
-  .hero-logos img.nesr { height: 58px; border-radius: 12px; }
   .hero h1 { margin: 22px 0 0; line-height: 1; }
   .hero h1 .dirt-badge {
     display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400;
@@ -139,7 +141,7 @@ const rowB = fill(odd.length ? odd : photos);
     position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 1280 / 813;
     background: linear-gradient(160deg, #2a1d12, #120d09);
     border: 1px solid var(--line);
-    box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(35,163,86,.08);
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(192,138,82,.08);
     transform: rotate(2deg);
     transition: transform .4s ease;
   }
@@ -149,14 +151,14 @@ const rowB = fill(odd.length ? odd : photos);
     position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 28px;
     background:
       repeating-linear-gradient(-45deg, rgba(255,255,255,.025) 0 14px, transparent 14px 28px),
-      radial-gradient(80% 60% at 50% 100%, rgba(35,163,86,.35), transparent 70%);
+      radial-gradient(80% 60% at 50% 100%, rgba(192,138,82,.35), transparent 70%);
   }
   .poster .fallback .big { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(44px, 5vw, 64px); line-height: .9; }
   .poster .fallback .big em { font-style: normal; color: var(--dirt); }
   .poster .fallback small { color: var(--muted); font-family: 'Barlow Condensed', sans-serif; letter-spacing: .14em; text-transform: uppercase; }
   .poster .tag {
     position: absolute; top: 18px; right: -40px; transform: rotate(35deg);
-    background: var(--dirt); color: #fff; padding: 6px 50px;
+    background: var(--dirt); color: #1a1109; padding: 6px 50px;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 13px;
   }
 
@@ -167,7 +169,7 @@ const rowB = fill(odd.length ? odd : photos);
   .countdown span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; }
 
   /* ---------- tape ---------- */
-  .tape { background: var(--dirt-2); color: #0f3d22; overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #0f3d22; }
+  .tape { background: var(--dirt); color: #1a1109; overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
   .tape-track { display: flex; gap: 40px; width: max-content; padding: 12px 0; animation: scroll 32s linear infinite; }
   .tape-track span { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 22px; letter-spacing: .04em; white-space: nowrap; }
   .tape-track span::after { content: "✦"; margin-left: 40px; }
@@ -182,7 +184,7 @@ const rowB = fill(odd.length ? odd : photos);
   /* details */
   .details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .detail { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; }
-  .detail .ico { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; background: rgba(35,163,86,.12); color: var(--dirt); margin-bottom: 18px; }
+  .detail .ico { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; background: rgba(192,138,82,.12); color: var(--dirt); margin-bottom: 18px; }
   .detail .ico svg { width: 22px; height: 22px; }
   .detail h3 { margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 13px; color: var(--muted); }
   .detail p { margin: 6px 0 0; font-weight: 600; font-size: 19px; line-height: 1.35; }
@@ -203,15 +205,17 @@ const rowB = fill(odd.length ? odd : photos);
   .slot .badge { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid currentColor; color: var(--c, var(--dirt)); white-space: nowrap; }
   .slot.xmas { --c: var(--xmas); }
   .slot.award { --c: var(--dirt-2); }
+  .award-body { display: flex; align-items: center; gap: 18px; }
+  .award-body .nesr { height: 52px; width: auto; border-radius: 10px; flex: none; }
 
   /* package */
   .package-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
   .price-card {
     position: relative; border-radius: 20px; padding: 40px; overflow: hidden;
-    background: linear-gradient(155deg, #0f3d22 0%, #1e1711 60%);
-    border: 1px solid rgba(35,163,86,.35);
+    background: linear-gradient(155deg, #3a2614 0%, #1e1711 60%);
+    border: 1px solid rgba(192,138,82,.35);
   }
-  .price-card::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: radial-gradient(circle, rgba(35,163,86,.35), transparent 70%); pointer-events: none; }
+  .price-card::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: radial-gradient(circle, rgba(192,138,82,.35), transparent 70%); pointer-events: none; }
   .price { font-family: 'Anton', sans-serif; font-size: clamp(72px, 10vw, 112px); line-height: 1; margin: 0 0 4px; }
   .price sup { font-size: .45em; vertical-align: top; position: relative; top: .25em; margin-right: 4px; color: var(--dirt); }
   .price-card .per { color: var(--muted); font-family: 'Barlow Condensed', sans-serif; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
@@ -273,7 +277,8 @@ const rowB = fill(odd.length ? odd : photos);
   /* footer */
   footer { padding: 60px 0 100px; color: var(--muted); font-size: 15px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
-  footer .brand img { height: 44px; }
+  footer .sponsor { display: flex; align-items: center; gap: 12px; }
+  footer .sponsor img { height: 40px; width: auto; border-radius: 6px; }
 
   /* mobile sticky cta */
   .sticky-cta { display: none; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; }
@@ -307,7 +312,6 @@ const rowB = fill(odd.length ? odd : photos);
     .slot .badge { justify-self: start; }
     .price-card, .pay-card { padding: 28px 22px; }
     .hero-logos img { height: 48px; }
-    .hero-logos img.nesr { height: 44px; }
     .hero h1 .autocross { -webkit-text-stroke-width: 1.5px; text-shadow: 3px 4px 0 #2a0905; }
     .hero .ctas .btn { flex: 1; }
     .countdown b { font-size: 28px; }
@@ -323,7 +327,7 @@ const rowB = fill(odd.length ? odd : photos);
 
 <nav class="top">
   <div class="wrap">
-    <a href="#top" class="brand"><img src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm Sports Complex" width="342" height="132"></a>
+    <a href="#top" class="brand wordmark" aria-label="Dirt Autocross"><span class="wm-dirt">Dirt</span><span class="wm-auto">Autocross</span></a>
     <ul>
       <li><a href="#season">Season</a></li>
       <li><a href="#details">Details</a></li>
@@ -339,8 +343,7 @@ const rowB = fill(odd.length ? odd : photos);
   <div class="wrap hero-grid">
     <div>
       <div class="hero-logos">
-        <img src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm Sports Complex" width="342" height="132">
-        <img class="nesr" src="/rally-farm/logo-nesr.png" alt="N. Ecija Sprint Rally Series 2026" width="204" height="110">
+        <img src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm" width="342" height="132">
       </div>
       <h1>
         <span class="dirt-badge">Dirt</span>
@@ -467,7 +470,7 @@ const rowB = fill(odd.length ? odd : photos);
       </div>
       <div class="slot award reveal">
         <time>16:00</time>
-        <div><h3>NESR 2026 Awarding</h3><p>Season champions and class winners take the podium.</p></div>
+        <div class="award-body"><img class="nesr" src="/rally-farm/logo-nesr.png" alt="N. Ecija Sprint Rally Series 2026" width="204" height="110"><div><h3>NESR 2026 Awarding</h3><p>Season champions and class winners take the podium.</p></div></div>
         <span class="badge">Trophies</span>
       </div>
       <div class="slot xmas reveal">
@@ -545,7 +548,7 @@ const rowB = fill(odd.length ? odd : photos);
 
 <footer>
   <div class="wrap">
-    <div class="brand"><img src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm Sports Complex" width="342" height="132"></div>
+    <div class="sponsor">Sponsored by <img src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm Sports Complex" width="342" height="132"></div>
     <div>Dirt Autocross &amp; NESR 2026 Awarding · December 5, 2026</div>
     <div>Questions? <a data-contact href="#" style="color: var(--dirt-2)">Message the organizers</a></div>
   </div>
