@@ -114,15 +114,20 @@ const rowB = fill(odd.length ? odd : photos);
   .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .hero-lockup, .hero-info { display: flex; flex-direction: column; align-items: inherit; }
   .hero-logo { height: 72px; width: auto; border-radius: 8px; box-shadow: 0 8px 24px -8px rgba(0,0,0,.8); }
-  .hero h1 { margin: 26px 0 0; line-height: 1; display: flex; flex-direction: column; align-items: inherit; }
+  .hero h1 { position: relative; isolation: isolate; margin: 26px 0 0; line-height: 1; display: flex; flex-direction: column; align-items: inherit; }
+  /* mud splatter behind the lockup */
+  .hero h1::before {
+    content: ""; position: absolute; z-index: -1; left: -8%; right: -12%; top: 18%; bottom: 8%; pointer-events: none; opacity: .9;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 220' preserveAspectRatio='none'><g fill='%23805634'><path d='M62 128c22-42 92-62 150-50 42-32 122-36 172-10 52-22 130-10 160 30 30 12 40 52 10 70-20 30-90 36-140 20-40 26-122 30-172 10-50 16-128 10-158-16-30-10-42-40-22-54z'/><circle cx='30' cy='92' r='10'/><circle cx='16' cy='150' r='5'/><circle cx='578' cy='94' r='9'/><circle cx='592' cy='152' r='4'/><circle cx='112' cy='40' r='6'/><circle cx='482' cy='38' r='8'/><circle cx='300' cy='18' r='5'/><circle cx='544' cy='202' r='6'/><circle cx='84' cy='204' r='7'/><circle cx='364' cy='212' r='4'/><ellipse cx='560' cy='60' rx='14' ry='5' transform='rotate(-30 560 60)'/><ellipse cx='48' cy='186' rx='12' ry='4' transform='rotate(25 48 186)'/></g><path fill='%23593a20' d='M150 120c30-22 90-30 140-18 40-16 110-14 150 8 30 16 20 40-20 46-50 10-120 12-170 4-50 4-110-6-120-22-6-8 6-14 20-18z'/></svg>") center / 100% 100% no-repeat;
+  }
   .hero h1 .dirt-badge {
-    display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400;
+    position: relative; z-index: 0; display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400;
     font-size: clamp(40px, 5.5vw, 72px); line-height: 1; color: #fff; background: var(--navy);
     padding: 8px 26px 6px; border: 4px solid var(--text); border-radius: 10px; transform: rotate(-3deg);
     box-shadow: 0 10px 24px -8px rgba(0,0,0,.8);
   }
   .hero h1 .autocross {
-    display: block; margin-top: 4px; font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400;
+    position: relative; z-index: 1; display: block; margin-top: -.13em; font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400;
     text-transform: uppercase; font-size: clamp(64px, 8.5vw, 116px); line-height: .9; letter-spacing: -.01em; color: var(--red);
     transform: skewX(-8deg); padding-right: .08em;
     -webkit-text-stroke: 2px #2a0905; text-shadow: 4px 5px 0 #2a0905, 0 18px 40px rgba(212,41,28,.35);
