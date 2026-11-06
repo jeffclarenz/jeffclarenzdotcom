@@ -27,7 +27,11 @@ const rowB = fill(odd.length ? odd : photos);
 <meta property="og:image" content="https://jeffclarenz.com/rally-farm/poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&family=Saira+Condensed:ital,wght@1,800;1,900&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Hero display fonts: preloaded + display=block so the lockup never flashes in a fallback font -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 <style is:global>
   /* ============ EDIT THESE ============ */
   /* Event config lives in the <script is:inline> at the bottom (FORM_URL, venue, payment). */
@@ -89,7 +93,7 @@ const rowB = fill(odd.length ? odd : photos);
   .brand img { height: 36px; width: auto; border-radius: 6px; }
   .wordmark { display: flex; align-items: center; gap: 8px; }
   .wm-dirt { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 16px; line-height: 1; color: #fff; background: var(--navy); border: 2px solid var(--text); border-radius: 5px; padding: 4px 8px 3px; transform: rotate(-3deg); }
-  .wm-auto { font-family: 'Saira Condensed', sans-serif; font-style: italic; font-weight: 900; text-transform: uppercase; font-size: 24px; line-height: 1; color: var(--red); transform: skewX(-8deg); }
+  .wm-auto { font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1; color: var(--red); transform: skewX(-8deg); }
   nav.top ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
   nav.top ul a { text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; color: var(--muted); }
   nav.top ul a:hover { color: var(--text); }
@@ -118,7 +122,7 @@ const rowB = fill(odd.length ? odd : photos);
     box-shadow: 0 10px 24px -8px rgba(0,0,0,.8);
   }
   .hero h1 .autocross {
-    display: block; margin-top: 4px; font-family: 'Saira Condensed', 'Anton', sans-serif; font-style: italic; font-weight: 900;
+    display: block; margin-top: 4px; font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400;
     text-transform: uppercase; font-size: clamp(64px, 8.5vw, 116px); line-height: .9; letter-spacing: -.01em; color: var(--red);
     transform: skewX(-8deg); padding-right: .08em;
     -webkit-text-stroke: 2px #2a0905; text-shadow: 4px 5px 0 #2a0905, 0 18px 40px rgba(212,41,28,.35);
