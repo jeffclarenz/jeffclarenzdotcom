@@ -95,23 +95,22 @@ const rowB = fill(odd.length ? odd : photos);
   nav.top ul a:hover { color: var(--text); }
 
   /* ---------- hero ---------- */
-  .hero { position: relative; padding: 72px 0 96px; min-height: 100vh; display: flex; align-items: center; isolation: isolate; }
-  /* Car photo fills the right side; text sits over the dust trail on the left so the car stays clear. */
+  /* Car photo is a full-width banner; text sits below it so the car is never covered. */
+  .hero { --photo-h: min(63.5vw, 62vh); position: relative; padding: calc(var(--photo-h) - 56px) 0 72px; isolation: isolate; background: var(--bg); }
   .hero::before {
-    content: ""; position: absolute; inset: 0 0 0 auto; width: 72%; z-index: -2;
+    content: ""; position: absolute; inset: 0 0 auto 0; height: var(--photo-h); z-index: -2;
     background:
-      linear-gradient(90deg, var(--bg) 0%, rgba(17,13,9,.7) 14%, rgba(17,13,9,0) 38%),
-      linear-gradient(0deg, var(--bg) 0%, rgba(17,13,9,0) 22%),
-      linear-gradient(180deg, rgba(17,13,9,.45) 0%, rgba(17,13,9,0) 18%),
-      url('/rally-farm/hero-car.jpg') right center / cover no-repeat;
+      linear-gradient(0deg, var(--bg) 0%, rgba(17,13,9,.55) 18%, rgba(17,13,9,0) 42%),
+      url('/rally-farm/hero-car.jpg') center 48% / cover no-repeat;
   }
   .hero::after { /* grain */
     content: ""; position: absolute; inset: 0; z-index: -1; opacity: .08; pointer-events: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
-  .hero-inner { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+  .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-lockup, .hero-info { display: flex; flex-direction: column; align-items: inherit; }
   .hero-logo { height: 72px; width: auto; border-radius: 8px; box-shadow: 0 8px 24px -8px rgba(0,0,0,.8); }
-  .hero h1 { margin: 26px 0 0; line-height: 1; display: flex; flex-direction: column; align-items: flex-start; }
+  .hero h1 { margin: 26px 0 0; line-height: 1; display: flex; flex-direction: column; align-items: inherit; }
   .hero h1 .dirt-badge {
     display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400;
     font-size: clamp(40px, 5.5vw, 72px); line-height: 1; color: #fff; background: var(--navy);
@@ -121,32 +120,28 @@ const rowB = fill(odd.length ? odd : photos);
   .hero h1 .autocross {
     display: block; margin-top: 4px; font-family: 'Saira Condensed', 'Anton', sans-serif; font-style: italic; font-weight: 900;
     text-transform: uppercase; font-size: clamp(64px, 8.5vw, 116px); line-height: .9; letter-spacing: -.01em; color: var(--red);
-    transform: skewX(-8deg); transform-origin: left bottom; padding-right: .08em;
+    transform: skewX(-8deg); padding-right: .08em;
     -webkit-text-stroke: 2px #2a0905; text-shadow: 4px 5px 0 #2a0905, 0 18px 40px rgba(212,41,28,.35);
   }
   .hero .tagline { display: block; margin-top: 10px; font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(22px, 2.8vw, 36px); letter-spacing: .08em; color: var(--text); }
   .hero .awarding { margin: 22px 0 0; font-size: clamp(20px, 2.2vw, 28px); color: var(--dirt-2); }
-  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
   .chip {
     display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
     background: rgba(17,13,9,.55); border: 1px solid var(--line); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: 15px;
   }
   .chip svg { width: 16px; height: 16px; color: var(--dirt); }
-  .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-  /* Narrower screens: photo on top with the car fully visible, text below it */
-  @media (max-width: 1100px) {
-    .hero { min-height: 0; padding: calc(63.5vw - 40px) 0 88px; }
-    .hero::before {
-      inset: 0 0 auto 0; width: 100%; height: 63.5vw;
-      background:
-        linear-gradient(0deg, var(--bg) 0%, rgba(17,13,9,0) 40%),
-        url('/rally-farm/hero-car.jpg') center / cover no-repeat;
-    }
-    .hero-inner { align-items: center; text-align: center; }
-    .hero h1 { align-items: center; }
-    .hero h1 .autocross { transform-origin: center; }
-    .meta-row, .hero .ctas { justify-content: center; }
+  .hero .ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+  @media (min-width: 1100px) {
+    .hero-inner { display: grid; grid-template-columns: auto 1fr; column-gap: 64px; align-items: end; text-align: left; justify-items: start; }
+    .hero-lockup, .hero-info { align-items: flex-start; }
+    .hero h1 .autocross { transform-origin: left bottom; }
+    .hero .awarding { margin-top: 0; }
+    .meta-row, .hero .ctas { justify-content: flex-start; }
+    .hero .ctas { margin-top: 24px; }
+    .countdown { margin-top: 24px; }
+    .scroll-cue { display: none; }
   }
   .scroll-cue { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); color: var(--muted); animation: bob 1.8s ease-in-out infinite; }
   .scroll-cue svg { width: 26px; height: 26px; display: block; }
@@ -319,12 +314,15 @@ const rowB = fill(odd.length ? odd : photos);
 
 <header class="hero" id="top">
   <div class="wrap hero-inner">
+    <div class="hero-lockup">
     <img class="hero-logo" src="/rally-farm/logo-rallyfarm.png" alt="RallyFarm" width="342" height="132">
     <h1>
       <span class="dirt-badge">Dirt</span>
       <span class="autocross">Autocross</span>
       <span class="tagline">Dust. Mud. Glory.</span>
     </h1>
+    </div>
+    <div class="hero-info">
     <p class="awarding serif">+ NESR 2026 Awarding &amp; Christmas Party</p>
     <div class="meta-row">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Sat · Dec 5, 2026</span>
@@ -339,6 +337,7 @@ const rowB = fill(odd.length ? odd : photos);
       <div><b data-cd="h">--</b><span>Hours</span></div>
       <div><b data-cd="m">--</b><span>Mins</span></div>
       <div><b data-cd="s">--</b><span>Secs</span></div>
+    </div>
     </div>
   </div>
   <a href="#season" class="scroll-cue" aria-label="Scroll down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
