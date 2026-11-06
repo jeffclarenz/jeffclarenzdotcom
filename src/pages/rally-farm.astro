@@ -149,10 +149,11 @@ const rowB = fill(odd.length ? odd : photos);
   .tape { background: var(--dirt); overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
   .tape-track {
     height: 24px; opacity: .85;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'><path fill='%231a1109' d='M3 4h7l7 16h-7z'/></svg>") 0 0 / 22px 24px repeat-x;
-    animation: tread 1s linear infinite;
+    /* groups of 5 lugs, then a gap */
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='154' height='24' viewBox='0 0 154 24'><path fill='%231a1109' d='M3 4h7l7 16h-7zM25 4h7l7 16h-7zM47 4h7l7 16h-7zM69 4h7l7 16h-7zM91 4h7l7 16h-7z'/></svg>") 0 0 / 154px 24px repeat-x;
+    animation: tread 7s linear infinite;
   }
-  @keyframes tread { to { background-position: 22px 0; } }
+  @keyframes tread { to { background-position: 154px 0; } }
   @keyframes scroll { to { transform: translateX(-50%); } }
 
   /* ---------- sections ---------- */
