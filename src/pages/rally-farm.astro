@@ -30,7 +30,9 @@ const rowB = fill(odd.length ? odd : photos);
 <!-- Hero display fonts: preloaded + display=block so the lockup never flashes in a fallback font -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=block" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/orbitron/v35/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nysimBoWgz.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/russoone/v18/Z9XUDmZRWg6M1LvRYsHOz8mJ.woff2">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&family=Orbitron:wght@900&family=Russo+One&display=block" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 <style is:global>
   /* ============ EDIT THESE ============ */
@@ -47,7 +49,8 @@ const rowB = fill(odd.length ? odd : photos);
     --dirt: #c08a52;      /* tan (primary accent) */
     --dirt-2: #e0b47c;    /* sand */
     --red: #d4291c;       /* AUTOCROSS red */
-    --navy: #14415f;      /* DIRT badge */
+    --navy: #14415f;
+    --stamp: #3b8fd9;     /* DIRT stamp ink */
     --mud: #6b4a2e;
     --xmas: #d4291c;
     --radius: 14px;
@@ -92,8 +95,8 @@ const rowB = fill(odd.length ? odd : photos);
   .brand { display: block; text-decoration: none; }
   .brand img { height: 36px; width: auto; border-radius: 6px; }
   .wordmark { display: flex; align-items: center; gap: 8px; }
-  .wm-dirt { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 16px; line-height: 1; color: #fff; background: var(--navy); border: 2px solid var(--text); border-radius: 5px; padding: 4px 8px 3px; transform: rotate(-3deg); }
-  .wm-auto { font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1; color: var(--red); transform: skewX(-8deg); }
+  .wm-dirt { font-family: 'Russo One', sans-serif; text-transform: uppercase; font-size: 14px; line-height: 1; color: var(--stamp); border: 2px solid currentColor; border-radius: 4px; padding: 3px 6px 2px; transform: rotate(-4deg); }
+  .wm-auto { font-family: 'Orbitron', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 18px; line-height: 1; color: var(--red); transform: skewX(-14deg); }
   nav.top ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
   nav.top ul a { text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; color: var(--muted); }
   nav.top ul a:hover { color: var(--text); }
@@ -115,22 +118,20 @@ const rowB = fill(odd.length ? odd : photos);
   .hero-lockup, .hero-info { display: flex; flex-direction: column; align-items: inherit; }
   .hero-logo { height: 72px; width: auto; border-radius: 8px; box-shadow: 0 8px 24px -8px rgba(0,0,0,.8); }
   .hero h1 { margin: 26px 0 0; line-height: 1; display: flex; flex-direction: column; align-items: inherit; }
+  /* DIRT as a worn rubber stamp */
   .hero h1 .dirt-badge {
-    position: relative; z-index: 0; display: inline-block; font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 72px); line-height: 1; color: #fff; background: var(--navy);
-    padding: 8px 26px 6px; border: 4px solid var(--text); border-radius: 10px; transform: rotate(-3deg);
-    box-shadow: 0 10px 24px -8px rgba(0,0,0,.8);
+    position: relative; z-index: 0; display: inline-block; font-family: 'Russo One', 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
+    font-size: clamp(36px, 5.2vw, 66px); line-height: 1; color: var(--stamp); letter-spacing: .02em;
+    padding: .06em .26em .04em; border: .1em solid currentColor; border-radius: .14em; transform: rotate(-4deg);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 7.3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>") 0 0 / 180px 180px; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 7.3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>") 0 0 / 180px 180px;
   }
-  /* mud splatter on the DIRT panel */
-  .hero h1 .dirt-badge::after {
-    content: ""; position: absolute; inset: -6px; pointer-events: none; transform: scale(-1, -1); /* flipped so the mud lands on the visible top of the sign */
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'><g fill='%23805634'><path d='M0 100V68c7-4 10 5 16 1 4-8 12-4 14 4 6-4 14 2 12 10 8 0 14 7 10 17z'/><path d='M60 100c4-6 13-4 17-8 6 4 14 2 18 8z'/><path d='M200 100V75c-6-2-10 6-16 4-4 6-12 8-10 16-3 2-6 5-6 5z'/><circle cx='36' cy='57' r='3'/><circle cx='49' cy='63' r='2'/><circle cx='59' cy='73' r='2.5'/><circle cx='71' cy='81' r='1.6'/><circle cx='22' cy='49' r='2'/><circle cx='112' cy='89' r='2'/><circle cx='186' cy='64' r='2.2'/><circle cx='193' cy='19' r='2'/><circle cx='8' cy='28' r='1.8'/><ellipse cx='84' cy='86' rx='4' ry='1.4' transform='rotate(-25 84 86)'/><ellipse cx='162' cy='86' rx='3.5' ry='1.2' transform='rotate(30 162 86)'/></g><g fill='%235e3f24'><path d='M0 100V84c6-2 9 4 14 2 5 4 12 4 14 14z'/><path d='M200 100V88c-5 0-9 5-14 4-2 4-4 8-4 8z'/><circle cx='28' cy='64' r='1.6'/><circle cx='130' cy='93' r='1.4'/><circle cx='177' cy='56' r='1.5'/><circle cx='185' cy='11' r='1.3'/></g></svg>") center / 100% 100% no-repeat;
-  }
+  /* AUTOCROSS in a wide racing face */
   .hero h1 .autocross {
-    position: relative; z-index: 1; display: block; margin-top: -.13em; font-family: 'Anton', Impact, sans-serif; font-style: italic; font-weight: 400;
-    text-transform: uppercase; font-size: clamp(64px, 8.5vw, 116px); line-height: .9; letter-spacing: -.01em; color: var(--red);
-    transform: skewX(-8deg); padding-right: .08em;
-    -webkit-text-stroke: 2px #2a0905; text-shadow: 4px 5px 0 #2a0905, 0 18px 40px rgba(212,41,28,.35);
+    position: relative; z-index: 1; display: block; margin-top: -.02em; padding: 0 .12em;
+    font-family: 'Orbitron', 'Russo One', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase;
+    font-size: clamp(32px, 9vw, 70px); line-height: 1; letter-spacing: .03em; color: var(--red);
+    transform: skewX(-14deg);
+    -webkit-text-stroke: .075em var(--red); paint-order: stroke fill; text-shadow: 3px 4px 0 #2a0905;
   }
   .hero .tagline { display: block; margin-top: 10px; font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(22px, 2.8vw, 36px); letter-spacing: .08em; color: var(--text); }
   .hero .awarding { margin: 22px 0 0; font-size: clamp(20px, 2.2vw, 28px); color: var(--dirt-2); }
@@ -145,7 +146,7 @@ const rowB = fill(odd.length ? odd : photos);
   @media (min-width: 1100px) {
     .hero-inner { display: grid; grid-template-columns: auto 1fr; column-gap: 64px; align-items: end; text-align: left; justify-items: start; }
     .hero-lockup, .hero-info { align-items: flex-start; }
-    .hero h1 .autocross { transform-origin: left bottom; }
+    .hero h1 .autocross { transform-origin: left bottom; font-size: clamp(46px, 4.3vw, 62px); }
     .hero .awarding { margin-top: 0; }
     .meta-row, .hero .ctas { justify-content: flex-start; }
     .hero .ctas { margin-top: 24px; }
@@ -299,7 +300,7 @@ const rowB = fill(odd.length ? odd : photos);
     .slot time { font-size: 38px; }
     .price-card, .pay-card { padding: 28px 22px; }
     .hero-logo { height: 52px; }
-    .hero h1 .autocross { -webkit-text-stroke-width: 1.5px; text-shadow: 3px 4px 0 #2a0905; }
+    .hero h1 .autocross { text-shadow: 2px 3px 0 #2a0905; }
     .countdown b { font-size: 28px; }
     .form-shell iframe { height: 1700px; }
     .gallery { padding-top: 76px; }
