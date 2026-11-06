@@ -148,11 +148,11 @@ const rowB = fill(odd.length ? odd : photos);
   /* tyre-tread ribbon */
   .tape { background: var(--dirt); overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; border-block: 3px solid #1a1109; }
   .tape-track {
-    height: 44px; opacity: .85;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='44' viewBox='0 0 56 44'><g fill='%231a1109'><path d='M4 3h16l8 9-8 9H4l8-9z'/><path d='M32 23h16l8 9-8 9H32l8-9z'/><path d='M-24 23h16l8 9-8 9h-16l8-9z'/></g></svg>") 0 0 / 56px 44px repeat-x;
-    animation: tread 1.6s linear infinite;
+    height: 24px; opacity: .85;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'><path fill='%231a1109' d='M3 4h7l7 16h-7z'/></svg>") 0 0 / 22px 24px repeat-x;
+    animation: tread 1s linear infinite;
   }
-  @keyframes tread { to { background-position: 56px 0; } }
+  @keyframes tread { to { background-position: 22px 0; } }
   @keyframes scroll { to { transform: translateX(-50%); } }
 
   /* ---------- sections ---------- */
